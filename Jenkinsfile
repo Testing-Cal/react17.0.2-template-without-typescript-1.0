@@ -491,7 +491,7 @@ pipeline {
 
                          }
                    }
-             } 
+             }
             else if ("${list[i]}" == "'Deploy'") {
                    stage('Deploy') {
                        if (env.ACTION == 'DEPLOY' || env.ACTION == 'PROMOTE' || env.ACTION == 'ROLLBACK') {
