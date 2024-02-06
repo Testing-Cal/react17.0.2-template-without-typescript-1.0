@@ -110,7 +110,7 @@ function Home() {
             <table className="table table-striped table-bordered table-dark p-5">
               <tbody>
               {
-                  data.map(x=><tr>
+                  data.map(x=><tr key={x.name}>
                       <td><b>{x.name}</b></td>
                       {
                         x.data.map(y=><td>{y}</td>)
