@@ -6,7 +6,31 @@ import Dashboard from './dashboard-page';
 import Listing from './listing-page';
 import PageNotFound from './page-not-found';
 
+const App = () => {
+  const basePath = process.env.REACT_APP_CONTEXT;
+  return (
+    <Router basename={basePath}>
+      <div>
+          <nav style={{margin: '20px'}}>
+              <Link to="/" style={{marginRight: '20px'}}>Home</Link>
+              <Link to="/dashboard" style={{marginRight: '20px'}}>Dashboard</Link>
+              <Link to="/listing">Listing</Link>
+          </nav>
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/listing" element={<Listing />} />
+              <Route path="*" element={<PageNotFound />} />
+          </Routes>
+      </div>
+    </Router>
+   )
+}
 
+render(<App />, document.getElementById('root'));
+
+/*
+class based approach -
 
 class App extends Component {
   constructor() {
@@ -39,3 +63,4 @@ class App extends Component {
 }
 
 render(<App />, document.getElementById('root'));
+*/
